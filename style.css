@@ -832,3 +832,35 @@ p + p { margin-top: 1rem; }
   .event-card { opacity: 1; transform: none; }
   .quote { opacity: 1; transform: none; }
 }
+.contact-agencies {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.contact-subtitle {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+
+.agency-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.agency-list a {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  transition: color 0.25s ease;
+}
+
+.agency-list a:hover {
+  
