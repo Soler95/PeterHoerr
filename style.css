@@ -285,13 +285,15 @@ p + p { margin-top: 1rem; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("unnamed%20(1).png");
+
+  background-image:
+    radial-gradient(ellipse 80% 70% at 70% 30%, rgba(201,169,110,0.12) 0%, transparent 60%),
+    linear-gradient(160deg, rgba(42,32,24,0.6) 0%, rgba(14,12,10,0.85) 55%, rgba(30,26,20,0.9) 100%),
+    url("unnamed%20%281%29.png");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-    radial-gradient(ellipse 80% 70% at 70% 30%, rgba(201,169,110,0.12) 0%, transparent 60%),
-    linear-gradient(160deg, #2a2018 0%, #0e0c0a 55%, #1e1a14 100%);
 }
 
 /* Grain overlay */
