@@ -12,10 +12,8 @@
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo">PETER HÖRR</div>
-
   <div class="menu-btn" id="menuBtn">☰</div>
 
   <nav id="nav">
@@ -32,14 +30,14 @@
   <div class="hero-content">
     <div class="hero-sub">Cellist · Professor · Soloist</div>
     <h1>Peter Hörr</h1>
-    <p>International performer in solo and chamber music across Europe</p>
+    <p>International performer across Europe & major concert halls</p>
   </div>
 </section>
 
 <!-- QUOTE -->
 <section class="section">
   <p class="quote">
-    “A distinguished German cellist with refined musical depth and international presence.”
+    “A refined voice in the European cello tradition, combining clarity, depth and emotional intelligence.”
   </p>
 </section>
 
@@ -47,8 +45,8 @@
 <section id="bio" class="section">
   <h2>Biography</h2>
   <p class="bio">
-    Peter Hörr is a German cellist known for his expressive sound, refined interpretation
-    and strong presence as both performer and professor across Europe.
+    Peter Hörr is a German cellist and professor recognized for his artistic depth,
+    refined interpretation and international concert activity across Europe.
   </p>
   <a class="btn" href="bio.html">Read more</a>
 </section>
@@ -67,14 +65,20 @@
   <h2>Upcoming Concerts</h2>
 
   <div class="event">
-    <div><strong>Berlin</strong><span> 12 March 2026</span></div>
+    <div>
+      <strong>Berlin Philharmonie</strong>
+      <span>12 March 2026</span>
+    </div>
   </div>
 
   <div class="event">
-    <div><strong>Munich</strong><span> 18 April 2026</span></div>
+    <div>
+      <strong>Vienna Musikverein</strong>
+      <span>18 April 2026</span>
+    </div>
   </div>
 
-  <a class="btn" href="calendar.html">View full schedule</a>
+  <a class="btn" href="calendar.html">Full schedule</a>
 </section>
 
 <!-- CONTACT -->
@@ -91,10 +95,13 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-name">PETER HÖRR</div>
+  <div class="footer-left">
+    <div class="footer-name">PETER HÖRR</div>
+    <div class="footer-role">Cellist · Professor · Soloist</div>
+  </div>
 
   <div class="footer-center">
-    “Music reveals what words cannot.”
+    “Music reveals what words cannot be.”
   </div>
 
   <div class="footer-right">
@@ -105,7 +112,7 @@
 
 <!-- COOKIE -->
 <div id="cookie" class="cookie">
-  <p>We use cookies to improve your experience.</p>
+  <p>We use cookies to enhance your experience.</p>
   <button onclick="acceptCookies()">Accept</button>
 </div>
 
@@ -113,22 +120,20 @@
 const nav = document.getElementById("nav");
 const btn = document.getElementById("menuBtn");
 
-btn.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
+btn.addEventListener("click", () => nav.classList.toggle("active"));
 
-document.querySelectorAll("#nav a").forEach(a => {
-  a.addEventListener("click", () => nav.classList.remove("active"));
+document.querySelectorAll("#nav a").forEach(a=>{
+  a.addEventListener("click", ()=>nav.classList.remove("active"));
 });
 
 const cookie = document.getElementById("cookie");
 
-if (!localStorage.getItem("cookie")) {
+if(!localStorage.getItem("cookieAccepted")){
   cookie.style.display = "flex";
 }
 
-function acceptCookies() {
-  localStorage.setItem("cookie", "yes");
+function acceptCookies(){
+  localStorage.setItem("cookieAccepted","yes");
   cookie.style.display = "none";
 }
 </script>
