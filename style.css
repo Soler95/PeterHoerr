@@ -292,7 +292,7 @@ p + p { margin-top: 1rem; }
     url("unnamed%20%281%29.png");
 
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
 }
 
