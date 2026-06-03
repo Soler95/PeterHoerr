@@ -863,4 +863,8 @@ p + p { margin-top: 1rem; }
 }
 
 .agency-list a:hover {
-  
+
+.agency-list a[href^="mailto"] {
+  color: var(--gold-light);
+  font-weight: 500;
+} 
