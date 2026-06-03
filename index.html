@@ -5,29 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Peter Hörr — Renowned German cellist performing across Europe and internationally." />
   <title>Peter Hörr — Cellist</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- ======================================================
-       HEADER
-  ====================================================== -->
+  <!-- HEADER -->
   <header class="header" id="header">
     <a class="logo" href="#home">PETER HÖRR</a>
-
     <button class="menu-toggle" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
-
-    <nav class="nav" id="nav" aria-label="Main navigation">
+    <nav class="nav" id="nav">
       <a href="#home">Home</a>
       <a href="#bio">Biography</a>
       <a href="#media">Media</a>
@@ -36,106 +29,63 @@
     </nav>
   </header>
 
-
-  <!-- ======================================================
-       HERO
-  ====================================================== -->
-  <section class="hero" id="home" aria-label="Hero">
-    <div class="hero-bg">
-      <div class="hero-grain"></div>
-    </div>
-
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
     <div class="hero-content">
       <span class="hero-kicker">Cellist · Soloist · International Performer</span>
       <h1 class="hero-title">Peter<br /><em>Hörr</em></h1>
       <p class="hero-sub">Renowned German cellist performing<br />across Europe and internationally.</p>
       <a class="btn btn--outline" href="#bio">Discover</a>
     </div>
-
-    <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll">
       <span>Scroll</span>
       <div class="hero-scroll-line"></div>
     </div>
   </section>
 
-
-  <!-- ======================================================
-       PRESS QUOTE
-  ====================================================== -->
-  <section class="section section--dark" id="press" aria-label="Press quote">
+  <!-- PRESS -->
+  <section class="section section--dark" id="press">
     <div class="container">
       <span class="label">Press</span>
-
       <blockquote class="quote">
-        <p>
-          "A deeply expressive artist with remarkable<br />
-          tonal control and musical intelligence."
-        </p>
+        <p>"A deeply expressive artist with remarkable tonal control and musical intelligence."</p>
         <footer>— <cite>Berliner Zeitung</cite></footer>
       </blockquote>
     </div>
   </section>
 
-
-  <!-- ======================================================
-       BIO
-  ====================================================== -->
-  <section class="section" id="bio" aria-label="Biography">
+  <!-- BIO -->
+  <section class="section" id="bio">
     <div class="container container--split">
       <div class="split-label">
         <span class="label">Biography</span>
       </div>
-
       <div class="split-content">
         <h2>About<br /><em>Peter Hörr</em></h2>
-
-        <p>
-          Peter Hörr is one of Germany's most respected cellists, known for his
-          refined sound, artistic depth, and an international concert career spanning
-          three decades and four continents.
-        </p>
-        <p>
-          A graduate of the Hochschule für Musik Detmold, Peter studied under
-          legendary masters before establishing himself as a soloist of rare
-          sensitivity — equally at home in Baroque repertoire and contemporary
-          commissions.
-        </p>
-
+        <p>Peter Hörr is one of Germany's most respected cellists, known for his refined sound, artistic depth, and an international concert career spanning three decades and four continents.</p>
+        <p>A graduate of the Hochschule für Musik Detmold, Peter studied under legendary masters before establishing himself as a soloist of rare sensitivity.</p>
         <a class="btn btn--primary" href="#">Read full biography</a>
       </div>
     </div>
   </section>
 
-
-  <!-- ======================================================
-       MEDIA
-  ====================================================== -->
-  <section class="section section--dark" id="media" aria-label="Media">
+  <!-- MEDIA -->
+  <section class="section section--dark" id="media">
     <div class="container">
       <span class="label">Media</span>
       <h2>Featured<br /><em>Performance</em></h2>
-
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/grtOob1WED0"
-          title="Peter Hörr — Featured Performance"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <iframe src="https://www.youtube.com/embed/grtOob1WED0" title="Peter Hörr performance" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </section>
 
-
-  <!-- ======================================================
-       CALENDAR
-  ====================================================== -->
-  <section class="section" id="calendar" aria-label="Upcoming concerts">
+  <!-- CALENDAR -->
+  <section class="section" id="calendar">
     <div class="container">
       <span class="label">Concerts</span>
       <h2>Upcoming<br /><em>Events</em></h2>
-
       <div class="events-list">
 
         <article class="event-card">
@@ -147,11 +97,9 @@
             <h3 class="event-venue">Philharmonie Berlin</h3>
             <p class="event-program">Elgar Cello Concerto · Brahms Double Concerto</p>
           </div>
-          <a class="event-link" href="#" aria-label="Details for Philharmonie Berlin concert">
+          <a class="event-link" href="#">
             <span>Details</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </article>
 
@@ -164,11 +112,9 @@
             <h3 class="event-venue">Royal Albert Hall</h3>
             <p class="event-program">Dvořák Cello Concerto · Shostakovich No. 1</p>
           </div>
-          <a class="event-link" href="#" aria-label="Details for Royal Albert Hall concert">
+          <a class="event-link" href="#">
             <span>Details</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </article>
 
@@ -176,60 +122,45 @@
     </div>
   </section>
 
-
-  <!-- ======================================================
-       CONTACT
-  ====================================================== -->
-  <section class="section section--dark" id="contact" aria-label="Contact">
+  <!-- CONTACT -->
+  <section class="section section--dark" id="contact">
     <div class="container container--narrow">
       <span class="label">Contact</span>
       <h2>Get in<br /><em>Touch</em></h2>
-
-      <form class="contact-form" id="contactForm" novalidate>
+      <form class="contact-form" id="contactForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input id="name" type="text" name="name" placeholder="Your name" required autocomplete="name" />
+          <input id="name" type="text" name="name" placeholder="Your name" autocomplete="name" />
         </div>
-
         <div class="form-group">
           <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+          <input id="email" type="email" name="email" placeholder="your@email.com" autocomplete="email" />
         </div>
-
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Your message…" required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Your message…"></textarea>
         </div>
-
         <button class="btn btn--primary btn--full" type="submit">Send message</button>
-        <p class="form-status" id="formStatus" aria-live="polite"></p>
+        <p class="form-status" id="formStatus"></p>
       </form>
     </div>
   </section>
 
-
-  <!-- ======================================================
-       FOOTER
-  ====================================================== -->
-  <footer class="footer" role="contentinfo">
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">PETER HÖRR</div>
-
-      <nav class="footer-nav" aria-label="Footer navigation">
+      <nav class="footer-nav">
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
         <a href="#contact">Contact</a>
       </nav>
-
       <small class="footer-copy">&copy; <span id="year"></span> Peter Hörr. All rights reserved.</small>
     </div>
   </footer>
 
-
-  <!-- ======================================================
-       COOKIE BANNER
-  ====================================================== -->
-  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie consent" hidden>
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner" style="display:none;">
     <p>We use cookies to improve your experience.</p>
     <div class="cookie-actions">
       <button class="btn btn--primary btn--sm" onclick="acceptCookies()">Accept</button>
@@ -237,39 +168,36 @@
     </div>
   </div>
 
-
-  <!-- ======================================================
-       JAVASCRIPT
-  ====================================================== -->
   <script>
-    /* ── Dynamic year ── */
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* ── Header scroll effect ── */
     const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
 
-    /* ── Mobile menu ── */
-    const nav   = document.getElementById('nav');
-    const btn   = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+    const btn = document.getElementById('menuBtn');
 
-    btn.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
+    btn.addEventListener('click', function() {
+      var open = nav.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', open);
       document.body.classList.toggle('menu-open', open);
     });
 
-    document.querySelectorAll('#nav a').forEach(link => {
-      link.addEventListener('click', () => {
+    document.querySelectorAll('#nav a').forEach(function(link) {
+      link.addEventListener('click', function() {
         nav.classList.remove('is-open');
         btn.setAttribute('aria-expanded', 'false');
         document.body.classList.remove('menu-open');
       });
     });
 
-    document.addEventListener('click', e => {
+    document.addEventListener('click', function(e) {
       if (!nav.contains(e.target) && !btn.contains(e.target)) {
         nav.classList.remove('is-open');
         btn.setAttribute('aria-expanded', 'false');
@@ -277,40 +205,34 @@
       }
     });
 
-    /* ── Cookie banner ── */
     function acceptCookies() {
       localStorage.setItem('cookies', 'accepted');
-      document.getElementById('cookieBanner').hidden = true;
+      document.getElementById('cookieBanner').style.display = 'none';
     }
     function rejectCookies() {
       localStorage.setItem('cookies', 'rejected');
-      document.getElementById('cookieBanner').hidden = true;
+      document.getElementById('cookieBanner').style.display = 'none';
     }
     if (!localStorage.getItem('cookies')) {
-      document.getElementById('cookieBanner').hidden = false;
+      document.getElementById('cookieBanner').style.display = 'flex';
     }
 
-    /* ── Contact form (client-side feedback) ── */
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const status = document.getElementById('formStatus');
-      status.textContent = 'Thank you — your message has been sent.';
+      document.getElementById('formStatus').textContent = 'Thank you — your message has been sent.';
       this.reset();
     });
 
-    /* ── Scroll-reveal ── */
-    const revealEls = document.querySelectorAll(
-      '.section, .event-card, .hero-content, .quote'
-    );
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    var revealEls = document.querySelectorAll('.section, .event-card, .quote');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           io.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
-    revealEls.forEach(el => io.observe(el));
+    revealEls.forEach(function(el) { io.observe(el); });
   </script>
 
 </body>
