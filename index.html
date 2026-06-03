@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Peter Hörr | Cellist</title>
 
+<meta name="description" content="Peter Hörr — German Cellist, Chamber Musician and Professor.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+<!-- ===================================== -->
 <!-- HEADER -->
+<!-- ===================================== -->
 
-<header class="header">
+<header class="header" id="header">
 
     <a href="#home" class="logo">
         PETER HÖRR
     </a>
 
     <button class="menu-toggle" id="menuToggle">
-        ☰
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
 
     <nav class="nav" id="nav">
-        <a href="#bio">Biography</a>
+
+        <a href="#home">Home</a>
+        <a href="#biography">Biography</a>
         <a href="#media">Media</a>
         <a href="#calendar">Calendar</a>
         <a href="#contact">Contact</a>
+
     </nav>
 
 </header>
 
+<!-- ===================================== -->
 <!-- HERO -->
+<!-- ===================================== -->
 
-<section id="home" class="hero">
+<section class="hero" id="home">
 
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
-        <div class="hero-category">
-            Cellist
+        <div class="hero-kicker">
+            Cellist · Chamber Musician · Professor
         </div>
 
         <h1>
@@ -54,69 +67,104 @@
         </h1>
 
         <p>
-            International Soloist · Chamber Musician · Professor
+            Internationally acclaimed cellist, chamber musician,
+            recording artist and professor at the Hochschule für Musik
+            und Theater Leipzig.
         </p>
 
-    </div>
-
-</section>
-
-<!-- PRESS QUOTE -->
-
-<section class="press">
-
-    <div class="press-inner">
-
-        <blockquote>
-            “One of the most distinguished German cellists of his generation.”
-        </blockquote>
-
-        <div class="press-source">
-            THE STRAD
-        </div>
-
-    </div>
-
-</section>
-
-<!-- BIO -->
-
-<section id="bio" class="bio-section">
-
-    <div class="section-label">
-        Biography
-    </div>
-
-    <div class="bio-content">
-
-        <p>
-            Peter Hörr is internationally recognised for the depth of his
-            musical interpretation, refined sound and extensive activity as
-            a soloist, chamber musician and professor. His performances have
-            taken him to major concert halls throughout Europe and beyond.
-        </p>
-
-        <a href="bio.html" class="text-link">
-            Read Full Biography →
+        <a href="#biography" class="hero-button">
+            Discover More
         </a>
 
     </div>
 
 </section>
 
-<!-- MEDIA -->
+<!-- ===================================== -->
+<!-- PRESS QUOTE -->
+<!-- ===================================== -->
 
-<section id="media" class="media-section">
+<section class="press">
+
+    <div class="press-line"></div>
+
+    <blockquote>
+
+        “A musician of exceptional depth, elegance and artistic integrity.”
+
+    </blockquote>
+
+    <span>
+        European Classical Review
+    </span>
+
+</section>
+
+<!-- ===================================== -->
+<!-- BIO -->
+<!-- ===================================== -->
+
+<section class="section biography" id="biography">
 
     <div class="section-label">
-        Featured Performance
+        Biography
     </div>
 
-    <div class="video-wrapper">
+    <h2>
+        A distinguished voice of the European cello tradition
+    </h2>
+
+    <p>
+
+        Peter Hörr is one of Germany's leading cellists,
+        renowned for his refined artistry, chamber music collaborations
+        and extensive international concert activity.
+
+    </p>
+
+    <p>
+
+        Having studied with Heinrich Schiff and Christophe Coin,
+        he has performed in major international venues including
+        the Lincoln Center in New York, Wigmore Hall in London
+        and Suntory Hall in Tokyo.
+
+    </p>
+
+    <p>
+
+        Alongside an acclaimed recording career,
+        he serves as Professor of Violoncello and Chamber Music
+        at the Hochschule für Musik und Theater
+        Felix Mendelssohn Bartholdy Leipzig.
+
+    </p>
+
+    <a href="bio.html" class="button">
+        Read Full Biography
+    </a>
+
+</section>
+
+<!-- ===================================== -->
+<!-- MEDIA -->
+<!-- ===================================== -->
+
+<section class="section media" id="media">
+
+    <div class="section-label">
+        Media
+    </div>
+
+    <h2>
+        Featured Performance
+    </h2>
+
+    <div class="video-container">
 
         <iframe
             src="https://www.youtube.com/embed/grtOob1WED0"
-            title="YouTube video player"
+            title="Peter Hörr"
             allowfullscreen>
         </iframe>
 
@@ -124,161 +172,253 @@
 
 </section>
 
+<!-- ===================================== -->
 <!-- CALENDAR -->
+<!-- ===================================== -->
 
-<section id="calendar" class="calendar-section">
+<section class="section calendar" id="calendar">
 
     <div class="section-label">
+        Calendar
+    </div>
+
+    <h2>
         Upcoming Performances
-    </div>
+    </h2>
 
-    <div class="calendar-list">
+    <div class="events-grid">
 
-        <article class="concert">
+        <article class="event-card">
 
-            <div class="concert-date">
-                <span>12</span>
-                MAR 2026
+            <div class="event-date">
+                12 MAR
             </div>
 
-            <div class="concert-info">
-                <h3>Berlin Philharmonie</h3>
-                <p>Berlin, Germany</p>
-            </div>
+            <h3>
+                Leipzig
+            </h3>
 
-            <a href="#" class="concert-link">
-                Read More →
+            <p>
+                Chamber Music Festival
+            </p>
+
+            <a href="calendar.html" class="event-link">
+                Read More
             </a>
 
         </article>
 
-        <article class="concert">
+        <article class="event-card">
 
-            <div class="concert-date">
-                <span>18</span>
-                APR 2026
+            <div class="event-date">
+                18 APR
             </div>
 
-            <div class="concert-info">
-                <h3>Musikverein</h3>
-                <p>Vienna, Austria</p>
-            </div>
+            <h3>
+                Berlin
+            </h3>
 
-            <a href="#" class="concert-link">
-                Read More →
-            </a>
+            <p>
+                Beethoven Cello Sonatas
+            </p>
 
-        </article>
-
-        <article class="concert">
-
-            <div class="concert-date">
-                <span>22</span>
-                MAY 2026
-            </div>
-
-            <div class="concert-info">
-                <h3>Salle Pleyel</h3>
-                <p>Paris, France</p>
-            </div>
-
-            <a href="#" class="concert-link">
-                Read More →
+            <a href="calendar.html" class="event-link">
+                Read More
             </a>
 
         </article>
 
     </div>
 
-</section>
+    <div class="calendar-more">
 
-<!-- CONTACT -->
-
-<section id="contact" class="contact-section">
-
-    <div class="section-label">
-        Management
-    </div>
-
-    <div class="contact-content">
-
-        <p>
-            For concert engagements, recordings and media enquiries:
-        </p>
-
-        <a href="mailto:management@example.com">
-            management@example.com
+        <a href="calendar.html" class="button">
+            View Full Calendar
         </a>
 
-        <p>
-            +49 30 123 4567
-        </p>
-
     </div>
 
 </section>
 
+<!-- ===================================== -->
+<!-- CONTACT -->
+<!-- ===================================== -->
+
+<section class="section contact" id="contact">
+
+    <div class="section-label">
+        Contact
+    </div>
+
+    <h2>
+        Professional Enquiries
+    </h2>
+
+    <form class="contact-form">
+
+        <input type="text" placeholder="Name">
+
+        <input type="email" placeholder="Email">
+
+        <textarea
+            rows="6"
+            placeholder="Message"></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+<!-- ===================================== -->
 <!-- FOOTER -->
+<!-- ===================================== -->
 
 <footer class="footer">
 
-    <div class="footer-name">
-        Peter Hörr
+    <div class="footer-top">
+
+        <div>
+
+            <div class="footer-name">
+                PETER HÖRR
+            </div>
+
+            <div class="footer-role">
+                Cellist · Chamber Musician · Professor
+            </div>
+
+        </div>
+
+        <div class="footer-quote">
+
+            Music begins where words end.
+
+        </div>
+
     </div>
 
-    <div class="footer-links">
+    <div class="footer-bottom">
 
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
+        <div>
+            © 2026 Peter Hörr
+        </div>
 
-    </div>
+        <div class="footer-links">
 
-    <div class="footer-copy">
-        © 2026 Peter Hörr
+            <a href="http://www.peterhoerr.com" target="_blank">
+                Official Website
+            </a>
+
+            <a href="bio.html">
+                Biography
+            </a>
+
+            <a href="calendar.html">
+                Calendar
+            </a>
+
+        </div>
+
     </div>
 
 </footer>
 
-<!-- COOKIES -->
+<!-- ===================================== -->
+<!-- COOKIE BANNER -->
+<!-- ===================================== -->
 
-<div id="cookieBanner" class="cookie-banner">
+<div class="cookie-banner" id="cookieBanner">
 
-    <div class="cookie-text">
-        This website uses cookies to improve your experience.
+    <div class="cookie-content">
+
+        <div class="cookie-text">
+
+            This website uses cookies to improve your browsing experience.
+
+        </div>
+
+        <div class="cookie-buttons">
+
+            <button id="cookieAccept">
+                Accept
+            </button>
+
+            <button id="cookieReject">
+                Decline
+            </button>
+
+        </div>
+
     </div>
-
-    <button id="acceptCookies">
-        Accept
-    </button>
 
 </div>
 
-<!-- JS -->
+<!-- ===================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================== -->
 
 <script>
 
-const nav = document.getElementById("nav");
-const menuToggle = document.getElementById("menuToggle");
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
 
-menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
 });
 
-document.querySelectorAll(".nav a").forEach(link => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("active");
+document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('active');
     });
 });
 
-const cookieBanner = document.getElementById("cookieBanner");
+document.addEventListener('click', function(e){
 
-if (!localStorage.getItem("cookiesAccepted")) {
-    cookieBanner.style.display = "flex";
+    if(
+        !nav.contains(e.target) &&
+        !menuToggle.contains(e.target)
+    ){
+        nav.classList.remove('active');
+    }
+
+});
+
+const cookieBanner = document.getElementById('cookieBanner');
+
+if(!localStorage.getItem('cookieChoice')){
+    cookieBanner.style.display='flex';
 }
 
-document.getElementById("acceptCookies").addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "true");
-    cookieBanner.style.display = "none";
+document.getElementById('cookieAccept')
+.addEventListener('click', function(){
+
+    localStorage.setItem('cookieChoice','accepted');
+    cookieBanner.style.display='none';
+
+});
+
+document.getElementById('cookieReject')
+.addEventListener('click', function(){
+
+    localStorage.setItem('cookieChoice','rejected');
+    cookieBanner.style.display='none';
+
+});
+
+window.addEventListener('scroll', () => {
+
+    const header =
+    document.getElementById('header');
+
+    if(window.scrollY > 50){
+        header.classList.add('scrolled');
+    }else{
+        header.classList.remove('scrolled');
+    }
+
 });
 
 </script>
