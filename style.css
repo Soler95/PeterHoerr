@@ -234,7 +234,6 @@ p + p { margin-top: 1rem; }
 
 @media (max-width: 768px) {
   .menu-toggle { display: flex; }
-
   .nav {
     position: fixed;
     inset: 0;
@@ -245,18 +244,16 @@ p + p { margin-top: 1rem; }
     clip-path: circle(0% at calc(100% - 2.5rem) 2.5rem);
     transition: clip-path 0.55s var(--ease);
     pointer-events: none;
+    z-index: 200; /* ← añade esta línea */
   }
-
   .nav.is-open {
     clip-path: circle(150% at calc(100% - 2.5rem) 2.5rem);
     pointer-events: all;
   }
-
   .nav a {
     font-size: 0.9rem;
     letter-spacing: 0.22em;
   }
-
   .menu-toggle[aria-expanded="true"] span:nth-child(1) {
     transform: translateY(6.5px) rotate(45deg);
   }
