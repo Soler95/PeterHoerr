@@ -272,7 +272,7 @@
     revealEls.forEach(function(el) { io.observe(el); });
   </script>
 
- <!-- SCRIPT CALENDARIO GOOGLE SHEETS -->
+  <!-- SCRIPT CALENDARIO GOOGLE SHEETS -->
   <script>
     const URL_SHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTn1g8XWcBeNSZLfI80KQ2yX8OuSGgW3uhx0LGDekNlIQUe03zSUZdrQo4fV4eZUTAp_5PWyHA5EZmh/pub?gid=0&single=true&output=csv';
 
@@ -303,16 +303,16 @@
         lista.innerHTML = eventos.map(e => `
           <article class="event-card">
             <div class="event-meta">
-              <time class="event-date" datetime="${e.Fecha}">
-                ${formatearFecha(e.Fecha)}
+              <time class="event-date" datetime="${e.Date}">
+                ${formatearFecha(e.Date)}
               </time>
-              <span class="event-city">${e.Ciudad}</span>
+              <span class="event-city">${e.City}</span>
             </div>
             <div class="event-body">
-              <h3 class="event-venue">${e.Sala}</h3>
-              <p class="event-program">${e.Programa}</p>
+              <h3 class="event-venue">${e.Venue}</h3>
+              <p class="event-program">${e.Program}</p>
             </div>
-            <a class="event-link" href="${e.Enlace || '#'}">
+            <a class="event-link" href="${e.Link || '#'}">
               <span>Details</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" 
