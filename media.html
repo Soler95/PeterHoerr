@@ -192,5 +192,94 @@ const io = new IntersectionObserver((entries) => {
 revealEls.forEach(el => io.observe(el));
 </script>
 
+<!-- SCRIPT CALENDARIO GOOGLE SHEETS -->
+  <script>
+    const URL_SHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQayu9W_U8GOJuAbtoTwruRXO5xbMjfgx_5aFiV0k7H9_P5xKBBwj-OU0Xjw1FIQQ4lIJRUbMza6Z9R/pub?gid=0&single=true&output=csv';
+
+    function formatearFecha(fechaStr) {
+      const fecha = new Date(fechaStr + 'T00:00:00');
+      return fecha.toLocaleDateString('en-GB', {
+        day: 'numeric', month: 'long', year: 'numeric'
+      });
+    }
+
+    function parsearCSV(texto) {
+      const filas = [];
+      const lineas = texto.trim().split('\n');
+      const parsearLinea = linea => {
+        const cols = [];
+        let actual = '';
+        let dentroComillas = false;
+        for (let i = 0; i < linea.length; i++) {
+          const c = linea[i];
+          if (c === '"') {
+            dentroComillas = !dentroComillas;
+          } else if (c === ',' && !dentroComillas) {
+            cols.push(actual.trim());
+            actual = '';
+          } else {
+            actual += c;
+          }
+        }
+        cols.push(actual.trim());
+        return cols;
+      };
+
+      const cabeceras = parsearLinea(lineas[0]);
+      for (let i = 1; i < lineas.length; i++) {
+        if (!lineas[i].trim()) continue;
+        const valores = parsearLinea(lineas[i]);
+        const obj = {};
+        cabeceras.forEach((cab, j) => {
+          obj[cab] = valores[j] || '';
+        });
+        filas.push(obj);
+      }
+      return filas;
+    }
+
+fetch(URL_SHEET)
+      .then(r => {
+        console.log('Respuesta Google:', r.status);
+        return r.text();
+      })
+      .then(csv => {
+        console.log('CSV recibido:', csv.substring(0, 200));
+        const eventos = parsearCSV(csv);
+        eventos.sort((a, b) => new Date(a.Date) - new Date(b.Date));
+        console.log('Eventos encontrados:', eventos.length);
+        console.log('Primer evento:', eventos[0]);
+        const lista = document.querySelector('.events-list');
+        if (!eventos.length) {
+          lista.innerHTML = '<p>No upcoming events.</p>';
+          return;
+        }
+lista.innerHTML = eventos.slice(0, 2).map(e => `
+  <article class="event-card is-visible">
+            <div class="event-meta">
+              <time class="event-date" datetime="${e.Date}">
+                ${formatearFecha(e.Date)}
+              </time>
+              <span class="event-city">${e.City}</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-venue">${e.Venue}</h3>
+              <p class="event-program">${e.Program}</p>
+            </div>
+            <a class="event-link" href="${e.Link || '#'}">
+              <span>Details</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" 
+                      stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+        `).join('');
+      })
+      .catch(err => {
+        console.log('Error:', err);
+        document.querySelector('.events-list').innerHTML = '<p>Could not load events.</p>';
+      });
+  </script>
+  
 </body>
-</html>
