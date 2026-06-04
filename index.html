@@ -272,5 +272,56 @@
     revealEls.forEach(function(el) { io.observe(el); });
   </script>
 
+ <!-- SCRIPT CALENDARIO GOOGLE SHEETS -->
+  <script>
+    const URL_SHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTn1g8XWcBeNSZLfI80KQ2yX8OuSGgW3uhx0LGDekNlIQUe03zSUZdrQo4fV4eZUTAp_5PWyHA5EZmh/pub?gid=0&single=true&output=csv';
+
+    function formatearFecha(fechaStr) {
+      const fecha = new Date(fechaStr + 'T00:00:00');
+      return fecha.toLocaleDateString('en-GB', {
+        day: 'numeric', month: 'long', year: 'numeric'
+      });
+    }
+
+    function parsearCSV(texto) {
+      const filas = texto.trim().split('\n');
+      const cabeceras = filas[0].split(',');
+      return filas.slice(1).map(fila => {
+        const valores = fila.split(',');
+        return cabeceras.reduce((obj, cab, i) => {
+          obj[cab.trim()] = valores[i]?.trim() || '';
+          return obj;
+        }, {});
+      });
+    }
+
+    fetch(URL_SHEET)
+      .then(r => r.text())
+      .then(csv => {
+        const eventos = parsearCSV(csv);
+        const lista = document.querySelector('.events-list');
+        lista.innerHTML = eventos.map(e => `
+          <article class="event-card">
+            <div class="event-meta">
+              <time class="event-date" datetime="${e.Fecha}">
+                ${formatearFecha(e.Fecha)}
+              </time>
+              <span class="event-city">${e.Ciudad}</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-venue">${e.Sala}</h3>
+              <p class="event-program">${e.Programa}</p>
+            </div>
+            <a class="event-link" href="${e.Enlace || '#'}">
+              <span>Details</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" 
+                      stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+        `).join('');
+      });
+  </script> 
 </body>
 </html>
