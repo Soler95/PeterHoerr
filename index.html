@@ -333,8 +333,8 @@ fetch(URL_SHEET)
           lista.innerHTML = '<p>No upcoming events.</p>';
           return;
         }
-        lista.innerHTML = eventos.map(e => `
-          <article class="event-card">
+lista.innerHTML = eventos.map(e => `
+  <article class="event-card is-visible">
             <div class="event-meta">
               <time class="event-date" datetime="${e.Date}">
                 ${formatearFecha(e.Date)}
