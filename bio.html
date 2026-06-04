@@ -65,22 +65,6 @@
 
       <div class="split-content">
         <h2>About<br /><em>Peter Hörr</em></h2>
-
-        <p>
-          Cellist and Conductor Peter Hoerr is regarded as one of the most versatile and sought-after German artists of his generation.
-          An early interest in ancient music led him to seminal studies with Heinrich Schiff and Christophe Coin at the Basel Music Academy.
-        </p>
-
-        <p>
-          Prize winner at the 1989 Scheveningen International Cello Competition, he has performed at major venues including Concertgebouw Amsterdam,
-          Lucerne Festival, Wigmore Hall and Berlin Philharmonie.
-        </p>
-
-        <p>
-          He was appointed Artistic Director and Principal Conductor of the Hofkapelle Weimar in 2009. The ensemble records exclusively for MDG.
-        </p>
-      </div>
-
     </div>
   </section>
 
@@ -187,6 +171,29 @@
 
     revealEls.forEach(el => io.observe(el));
   </script>
+<!-- SCRIPT BIOGRAFIA GOOGLE SHEETS -->
+<script>
+  const URL_BIO = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTn1g8XWcBeNSZLfI80KQ2yX8OuSGgW3uhx0LGDekNlIQUe03zSUZdrQo4fV4eZUTAp_5PWyHA5EZmh/pub?gid=352345104&single=true&output=csv';
 
+  fetch(URL_BIO)
+    .then(r => r.text())
+    .then(csv => {
+      const lineas = csv.trim().split('\n').slice(1);
+      const parrafos = lineas
+        .map(l => l.replace(/^"|"$/g, '').trim())
+        .filter(l => l.length > 0);
+
+      const contenido = document.querySelector('.split-content');
+      const existentes = contenido.querySelectorAll('p');
+      existentes.forEach(p => p.remove());
+
+      parrafos.forEach(texto => {
+        const p = document.createElement('p');
+        p.textContent = texto;
+        p.classList.add('is-visible');
+        contenido.appendChild(p);
+      });
+    });
+</script>
 </body>
 </html>
