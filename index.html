@@ -284,15 +284,38 @@
     }
 
     function parsearCSV(texto) {
-      const filas = texto.trim().split('\n');
-      const cabeceras = filas[0].split(',');
-      return filas.slice(1).map(fila => {
-        const valores = fila.split(',');
-        return cabeceras.reduce((obj, cab, i) => {
-          obj[cab.trim()] = valores[i]?.trim() || '';
-          return obj;
-        }, {});
-      });
+      const filas = [];
+      const lineas = texto.trim().split('\n');
+      const parsearLinea = linea => {
+        const cols = [];
+        let actual = '';
+        let dentroComillas = false;
+        for (let i = 0; i < linea.length; i++) {
+          const c = linea[i];
+          if (c === '"') {
+            dentroComillas = !dentroComillas;
+          } else if (c === ',' && !dentroComillas) {
+            cols.push(actual.trim());
+            actual = '';
+          } else {
+            actual += c;
+          }
+        }
+        cols.push(actual.trim());
+        return cols;
+      };
+
+      const cabeceras = parsearLinea(lineas[0]);
+      for (let i = 1; i < lineas.length; i++) {
+        if (!lineas[i].trim()) continue;
+        const valores = parsearLinea(lineas[i]);
+        const obj = {};
+        cabeceras.forEach((cab, j) => {
+          obj[cab] = valores[j] || '';
+        });
+        filas.push(obj);
+      }
+      return filas;
     }
 
     fetch(URL_SHEET)
@@ -300,6 +323,10 @@
       .then(csv => {
         const eventos = parsearCSV(csv);
         const lista = document.querySelector('.events-list');
+        if (!eventos.length) {
+          lista.innerHTML = '<p>No upcoming events.</p>';
+          return;
+        }
         lista.innerHTML = eventos.map(e => `
           <article class="event-card">
             <div class="event-meta">
@@ -321,7 +348,11 @@
             </a>
           </article>
         `).join('');
+      })
+      .catch(() => {
+        document.querySelector('.events-list').innerHTML = '<p>Could not load events.</p>';
       });
-  </script> 
+  </script>
+  
 </body>
 </html>
