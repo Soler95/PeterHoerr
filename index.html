@@ -318,10 +318,16 @@
       return filas;
     }
 
-    fetch(URL_SHEET)
-      .then(r => r.text())
+fetch(URL_SHEET)
+      .then(r => {
+        console.log('Respuesta Google:', r.status);
+        return r.text();
+      })
       .then(csv => {
+        console.log('CSV recibido:', csv.substring(0, 200));
         const eventos = parsearCSV(csv);
+        console.log('Eventos encontrados:', eventos.length);
+        console.log('Primer evento:', eventos[0]);
         const lista = document.querySelector('.events-list');
         if (!eventos.length) {
           lista.innerHTML = '<p>No upcoming events.</p>';
@@ -349,7 +355,8 @@
           </article>
         `).join('');
       })
-      .catch(() => {
+      .catch(err => {
+        console.log('Error:', err);
         document.querySelector('.events-list').innerHTML = '<p>Could not load events.</p>';
       });
   </script>
