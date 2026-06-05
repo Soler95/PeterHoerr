@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Peter Hörr — Concert Calendar" />
+  <title>Peter Hörr — Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 
+  <style>
+    /* Hero banner */
+    .calendar-hero {
+      position: relative;
+      padding: 10rem var(--gutter) 6rem;
+      background: var(--ink);
+      color: var(--cream);
+      overflow: hidden;
+    }
+    .calendar-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 60% 0%,
+        rgba(201,169,110,0.10) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .calendar-hero .label { margin-bottom: 1rem; }
+    .calendar-hero h1     { color: var(--cream); }
+    .calendar-hero p      { margin-top: 1rem; color: var(--cream-dim); max-width: 50ch; }
+
+    /* Status */
+    .events-status {
+      padding: 4rem 0;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <a class="logo" href="index.html">PETER HÖRR</a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="bio.html">Biography</a>
+      <a href="media.html">Media</a>
+      <a href="calendar.html" aria-current="page">Calendar</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="calendar-hero">
+    <div class="container">
+      <span class="label">Peter Hörr</span>
+      <h1>Concert<br /><em>Calendar</em></h1>
+      <p>All upcoming performances and events.</p>
+    </div>
+  </section>
+
+  <!-- ALL EVENTS -->
+  <section class="section is-visible">
+    <div class="container">
+      <div id="events-status" class="events-status">Loading events…</div>
+      <div class="events-list" id="events-list"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">PETER HÖRR</div>
+      <nav class="footer-nav">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <small class="footer-copy">&copy; <span id="year"></span> Peter Hörr. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function() {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const nav = document.getElementById('nav');
+    const btn = document.getElementById('menuBtn');
+    btn.addEventListener('click', function() {
+      const open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.querySelectorAll('#nav a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      }
+    });
+  </script>
+
+  <script>
+    const URL_SHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTn1g8XWcBeNSZLfI80KQ2yX8OuSGgW3uhx0LGDekNlIQUe03zSUZdrQo4fV4eZUTAp_5PWyHA5EZmh/pub?gid=0&single=true&output=csv';
+
+    function formatearFecha(fechaStr) {
+      const fecha = new Date(fechaStr + 'T00:00:00');
+      return fecha.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    function parsearCSV(texto) {
+      const filas = [];
+      const lineas = texto.trim().split('\n');
+      const parsearLinea = linea => {
+        const cols = [];
+        let actual = '', dentroComillas = false;
+        for (let i = 0; i < linea.length; i++) {
+          const c = linea[i];
+          if (c === '"') { dentroComillas = !dentroComillas; }
+          else if (c === ',' && !dentroComillas) { cols.push(actual.trim()); actual = ''; }
+          else { actual += c; }
+        }
+        cols.push(actual.trim());
+        return cols;
+      };
+      const cabeceras = parsearLinea(lineas[0]);
+      for (let i = 1; i < lineas.length; i++) {
+        if (!lineas[i].trim()) continue;
+        const valores = parsearLinea(lineas[i]);
+        const obj = {};
+        cabeceras.forEach((cab, j) => { obj[cab] = valores[j] || ''; });
+        filas.push(obj);
+      }
+      return filas;
+    }
+
+    fetch(URL_SHEET)
+      .then(r => r.text())
+      .then(csv => {
+        const eventos = parsearCSV(csv);
+        const statusEl = document.getElementById('events-status');
+        const lista    = document.getElementById('events-list');
+
+        if (!eventos.length) {
+          statusEl.textContent = 'No upcoming events.';
+          return;
+        }
+
+        statusEl.style.display = 'none';
+        lista.innerHTML = eventos.map(e => `
+          <article class="event-card is-visible">
+            <div class="event-meta">
+              <time class="event-date" datetime="${e.Date}">${formatearFecha(e.Date)}</time>
+              <span class="event-city">${e.City}</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-venue">${e.Venue}</h3>
+              <p class="event-program">${e.Program}</p>
+            </div>
+            <a class="event-link" href="${e.Link || '#'}">
+              <span>Details</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>`).join('');
+      })
+      .catch(() => {
+        document.getElementById('events-status').textContent = 'Could not load events.';
+      });
+  </script>
+
+</body>
+</html>
