@@ -32,8 +32,8 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-bg">
-  <img src="unnamed%20%281%29.png" alt="Peter Hörr">
-</div>
+      <img src="unnamed%20%281%29.png" alt="Peter Hörr">
+    </div>
     <div class="hero-content">
       <span class="hero-kicker">Cellist · Soloist · International Performer</span>
       <h1 class="hero-title">Peter<br /><em>Hörr</em></h1>
@@ -66,46 +66,40 @@
       <div class="split-content">
         <h2>About<br /><em>Peter Hörr</em></h2>
         <p>Peter Hörr is one of Germany's most respected cellists, known for his refined sound, artistic depth, and an international concert career spanning three decades and four continents.</p>
-        <p>Since 2000, he is Professor of Cello at the renowned Felix Mendelssohn Bartholdy University of Music and Theatre Leipzig, one of Germany’s leading institutions for higher musical education.</p>
+        <p>Since 2000, he is Professor of Cello at the renowned Felix Mendelssohn Bartholdy University of Music and Theatre Leipzig, one of Germany's leading institutions for higher musical education.</p>
         <a class="btn btn--primary" href="bio.html">Read full biography</a>
       </div>
     </div>
   </section>
 
-<!-- MEDIA -->
-<section class="section section--dark" id="media">
-  <div class="container">
-    <span class="label">Media</span>
-
-    <h2>Featured<br /><em>Performance</em></h2>
-
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/DYi81hoUhnk?start=126"
-        title="Peter Hörr performance"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
+  <!-- MEDIA -->
+  <section class="section section--dark" id="media">
+    <div class="container">
+      <span class="label">Media</span>
+      <h2>Featured<br /><em>Performance</em></h2>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/DYi81hoUhnk?start=126"
+          title="Peter Hörr performance"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <div style="margin-top: 2rem;">
+        <a href="media.html" class="btn btn--outline">View all media</a>
+      </div>
     </div>
+  </section>
 
-    <!-- BUTTON TO MEDIA PAGE -->
-    <div style="margin-top: 2rem;">
-      <a href="media.html" class="btn btn--outline">
-        View all media
-      </a>
-    </div>
-  </div>
-</section>
-
-  <!-- CALENDAR -->
+  <!-- CALENDAR — only 2 events -->
   <section class="section" id="calendar">
     <div class="container">
       <span class="label">Concerts</span>
       <h2>Upcoming<br /><em>Events</em></h2>
-      <div class="events-list">
-
-
+      <div class="events-list" id="events-list"></div>
+      <div style="margin-top: 2.5rem;">
+        <a href="calendar.html" class="btn btn--primary">View all concerts</a>
       </div>
     </div>
   </section>
@@ -131,26 +125,14 @@
         <button class="btn btn--primary btn--full" type="submit">Send message</button>
         <p class="form-status" id="formStatus"></p>
       </form>
-      <!-- Agencies -->
-<div class="contact-agencies">
-  <h3 class="contact-subtitle">Agencies & Contact</h3>
-
-  <div class="agency-list">
-
-    <a href="mailto:peterhoerr@me.com">
-      Email: peterhoerr@me.com
-    </a>
-
-    <a href="https://shuppartists.com/" target="_blank" rel="noopener noreferrer">
-      Shupp Artists
-    </a>
-
-    <a href="https://www.berlinklassikartistmanagement.com/" target="_blank" rel="noopener noreferrer">
-      Berlin Klassik Artist Management
-    </a>
-
-  </div>
-</div>
+      <div class="contact-agencies">
+        <h3 class="contact-subtitle">Agencies & Contact</h3>
+        <div class="agency-list">
+          <a href="mailto:peterhoerr@me.com">Email: peterhoerr@me.com</a>
+          <a href="https://shuppartists.com/" target="_blank" rel="noopener noreferrer">Shupp Artists</a>
+          <a href="https://www.berlinklassikartistmanagement.com/" target="_blank" rel="noopener noreferrer">Berlin Klassik Artist Management</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -181,25 +163,17 @@
 
     const header = document.getElementById('header');
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 40) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      header.classList.toggle('scrolled', window.scrollY > 40);
     });
 
     const nav = document.getElementById('nav');
     const btn = document.getElementById('menuBtn');
-
-btn.addEventListener('click', function() {
-  var open = nav.classList.toggle('is-open');
-  btn.setAttribute('aria-expanded', open);
-  document.body.classList.toggle('menu-open', open);
-  if (open) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-});
-
+    btn.addEventListener('click', function() {
+      const open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     document.querySelectorAll('#nav a').forEach(function(link) {
       link.addEventListener('click', function() {
         nav.classList.remove('is-open');
@@ -207,7 +181,6 @@ btn.addEventListener('click', function() {
         document.body.classList.remove('menu-open');
       });
     });
-
     document.addEventListener('click', function(e) {
       if (!nav.contains(e.target) && !btn.contains(e.target)) {
         nav.classList.remove('is-open');
@@ -246,15 +219,12 @@ btn.addEventListener('click', function() {
     revealEls.forEach(function(el) { io.observe(el); });
   </script>
 
-<!-- SCRIPT CALENDARIO GOOGLE SHEETS -->
   <script>
     const URL_SHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTn1g8XWcBeNSZLfI80KQ2yX8OuSGgW3uhx0LGDekNlIQUe03zSUZdrQo4fV4eZUTAp_5PWyHA5EZmh/pub?gid=0&single=true&output=csv';
 
     function formatearFecha(fechaStr) {
       const fecha = new Date(fechaStr + 'T00:00:00');
-      return fecha.toLocaleDateString('en-GB', {
-        day: 'numeric', month: 'long', year: 'numeric'
-      });
+      return fecha.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
     function parsearCSV(texto) {
@@ -262,78 +232,60 @@ btn.addEventListener('click', function() {
       const lineas = texto.trim().split('\n');
       const parsearLinea = linea => {
         const cols = [];
-        let actual = '';
-        let dentroComillas = false;
+        let actual = '', dentroComillas = false;
         for (let i = 0; i < linea.length; i++) {
           const c = linea[i];
-          if (c === '"') {
-            dentroComillas = !dentroComillas;
-          } else if (c === ',' && !dentroComillas) {
-            cols.push(actual.trim());
-            actual = '';
-          } else {
-            actual += c;
-          }
+          if (c === '"') { dentroComillas = !dentroComillas; }
+          else if (c === ',' && !dentroComillas) { cols.push(actual.trim()); actual = ''; }
+          else { actual += c; }
         }
         cols.push(actual.trim());
         return cols;
       };
-
       const cabeceras = parsearLinea(lineas[0]);
       for (let i = 1; i < lineas.length; i++) {
         if (!lineas[i].trim()) continue;
         const valores = parsearLinea(lineas[i]);
         const obj = {};
-        cabeceras.forEach((cab, j) => {
-          obj[cab] = valores[j] || '';
-        });
+        cabeceras.forEach((cab, j) => { obj[cab] = valores[j] || ''; });
         filas.push(obj);
       }
       return filas;
     }
 
-fetch(URL_SHEET)
-      .then(r => {
-        console.log('Respuesta Google:', r.status);
-        return r.text();
-      })
+    function eventoHTML(e) {
+      return `
+        <article class="event-card is-visible">
+          <div class="event-meta">
+            <time class="event-date" datetime="${e.Date}">${formatearFecha(e.Date)}</time>
+            <span class="event-city">${e.City}</span>
+          </div>
+          <div class="event-body">
+            <h3 class="event-venue">${e.Venue}</h3>
+            <p class="event-program">${e.Program}</p>
+          </div>
+          <a class="event-link" href="${e.Link || '#'}">
+            <span>Details</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </article>`;
+    }
+
+    fetch(URL_SHEET)
+      .then(r => r.text())
       .then(csv => {
-        console.log('CSV recibido:', csv.substring(0, 200));
         const eventos = parsearCSV(csv);
-        console.log('Eventos encontrados:', eventos.length);
-        console.log('Primer evento:', eventos[0]);
-        const lista = document.querySelector('.events-list');
-        if (!eventos.length) {
-          lista.innerHTML = '<p>No upcoming events.</p>';
-          return;
-        }
-lista.innerHTML = eventos.map(e => `
-  <article class="event-card is-visible">
-            <div class="event-meta">
-              <time class="event-date" datetime="${e.Date}">
-                ${formatearFecha(e.Date)}
-              </time>
-              <span class="event-city">${e.City}</span>
-            </div>
-            <div class="event-body">
-              <h3 class="event-venue">${e.Venue}</h3>
-              <p class="event-program">${e.Program}</p>
-            </div>
-            <a class="event-link" href="${e.Link || '#'}">
-              <span>Details</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" 
-                      stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </article>
-        `).join('');
+        const lista = document.getElementById('events-list');
+        if (!eventos.length) { lista.innerHTML = '<p>No upcoming events.</p>'; return; }
+        /* Show only first 2 events on homepage */
+        lista.innerHTML = eventos.slice(0, 2).map(eventoHTML).join('');
       })
-      .catch(err => {
-        console.log('Error:', err);
-        document.querySelector('.events-list').innerHTML = '<p>Could not load events.</p>';
+      .catch(() => {
+        document.getElementById('events-list').innerHTML = '<p>Could not load events.</p>';
       });
   </script>
-  
+
 </body>
 </html>
