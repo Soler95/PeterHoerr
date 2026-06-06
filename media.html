@@ -329,6 +329,11 @@ lista.innerHTML = eventos.slice(0, 2).map(e => `
         console.log('Error:', err);
         document.querySelector('.events-list').innerHTML = '<p>Could not load events.</p>';
       });
+    function toggleTracks(btn) {
+  const list = btn.nextElementSibling;
+  btn.classList.toggle('open');
+  list.classList.toggle('open');
+}
   </script>
   
 </body>
