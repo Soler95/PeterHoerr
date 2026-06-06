@@ -84,37 +84,82 @@
 <!-- AUDIO SECTION -->
 <div class="audio-section" style="margin-top: 3rem;">
   <span class="label">Audio</span>
-
-  <h2>
-    Selected<br /><em>Recordings</em>
-  </h2>
-
-  <p>
-    Studio recordings and major repertoire interpretations available on Apple Music.
-  </p>
+  <h2>Selected<br /><em>Recordings</em></h2>
+  <p>Studio recordings and major repertoire interpretations available on Apple Music.</p>
 
   <div class="album-grid">
 
-    <div class="album-embed">
-      <iframe
-        allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-        frameborder="0"
-        height="450"
-        style="width:100%; overflow:hidden; border-radius:10px;"
-        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-        src="https://embed.music.apple.com/de/album/beethoven-sonatas/1596475794">
-      </iframe>
+    <!-- Álbum 1 -->
+    <div class="album-card">
+      <div class="album-top">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a9/c4/7c/a9c47ccc-eeb5-8d9a-f79e-01fcba0df6d7/cover_10211827.jpg/600x600bf-60.jpg"
+             alt="Beethoven Sonatas" class="album-thumb">
+        <div class="album-meta">
+          <span class="album-composer">Ludwig van Beethoven</span>
+          <h3 class="album-title">Cello Sonatas</h3>
+          <span class="album-sub">with Liese Klahn · 2021</span>
+          <a class="album-link"
+             href="https://music.apple.com/de/album/beethoven-sonatas/1596475794"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zm-5 13H9v-2h4v2zm4-4H7v-2h10v2zm0-4H7V6h10v2z"/></svg>
+            Open in Apple Music
+          </a>
+        </div>
+      </div>
+      <div class="album-tracks">
+        <button class="tracks-toggle" onclick="toggleTracks(this)">
+          <span>Tracklist</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <ol class="tracks-list">
+          <li>Sonata No. 1 in F major, Op. 5 No. 1 — Adagio sostenuto</li>
+          <li>Sonata No. 1 in F major, Op. 5 No. 1 — Allegro vivace</li>
+          <li>Sonata No. 2 in G minor, Op. 5 No. 2 — Adagio sostenuto</li>
+          <li>Sonata No. 2 in G minor, Op. 5 No. 2 — Rondo</li>
+          <li>Sonata No. 3 in A major, Op. 69 — Allegro ma non tanto</li>
+          <li>Sonata No. 3 in A major, Op. 69 — Scherzo</li>
+          <li>Sonata No. 3 in A major, Op. 69 — Adagio cantabile</li>
+          <li>Sonata No. 4 in C major, Op. 102 No. 1</li>
+          <li>Sonata No. 5 in D major, Op. 102 No. 2</li>
+        </ol>
+      </div>
     </div>
 
-    <div class="album-embed">
-      <iframe
-        allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-        frameborder="0"
-        height="450"
-        style="width:100%; overflow:hidden; border-radius:10px;"
-        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-        src="https://embed.music.apple.com/de/album/duport-cello-concertos-no-4-6/783613320">
-      </iframe>
+    <!-- Álbum 2 -->
+    <div class="album-card">
+      <div class="album-top">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/ba/59/74/ba59744f-1f5a-d525-dc68-b7db4934f5e6/0760623158167_1448.jpg/600x600bf-60.jpg"
+             alt="Duport Concertos" class="album-thumb">
+        <div class="album-meta">
+          <span class="album-composer">Jean-Louis Duport</span>
+          <h3 class="album-title">Cello Concertos No. 4 &amp; 6</h3>
+          <span class="album-sub">with Hofkapelle Weimar · 2009</span>
+          <a class="album-link"
+             href="https://music.apple.com/de/album/duport-cello-concertos-no-4-6/783613320"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zm-5 13H9v-2h4v2zm4-4H7v-2h10v2zm0-4H7V6h10v2z"/></svg>
+            Open in Apple Music
+          </a>
+        </div>
+      </div>
+      <div class="album-tracks">
+        <button class="tracks-toggle" onclick="toggleTracks(this)">
+          <span>Tracklist</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <ol class="tracks-list">
+          <li>Concerto No. 4 in E minor — Allegro moderato</li>
+          <li>Concerto No. 4 in E minor — Adagio</li>
+          <li>Concerto No. 4 in E minor — Rondeau</li>
+          <li>Concerto No. 6 in D major — Allegro</li>
+          <li>Concerto No. 6 in D major — Adagio</li>
+          <li>Concerto No. 6 in D major — Rondeau</li>
+        </ol>
+      </div>
     </div>
 
   </div>
