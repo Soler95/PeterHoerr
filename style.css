@@ -1164,14 +1164,10 @@ p + p { margin-top: 1rem; }
   opacity: 0.4;
   min-width: 14px;
   text-align: right;
-}
 
-@media (max-width: 600px) {
-  .album-grid { grid-template-columns: 1fr; }
-  .album-thumb { width: 64px; height: 64px; }
 }
-@media (max-width: 600px) {
-  .album-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 700px) {
+  .audio-section > div {
+    grid-template-columns: 1fr !important;
   }
 }
