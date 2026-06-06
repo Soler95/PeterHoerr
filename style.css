@@ -1019,3 +1019,19 @@ p + p { margin-top: 1rem; }
     grid-template-columns: 1fr;
   }
 }
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+.album-embed {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .album-grid {
+    grid-template-columns: 1fr;
+  }
+}
