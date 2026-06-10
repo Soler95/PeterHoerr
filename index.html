@@ -1,461 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Peter Hörr — Renowned German cellist performing across Europe and internationally.">
-<title>Peter Hörr — Cellist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Peter Hörr — Renowned German cellist performing across Europe and internationally." />
+  <title>Peter Hörr — Cellist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- CURSOR -->
-<div class="cur-ring" id="curRing"></div>
-<div class="cur-dot"  id="curDot"></div>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <a class="logo" href="index.html">PETER HÖRR</a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#bio">Biography</a>
+      <a href="#media">Media</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="index.html"><span>P</span>eter H<span>ö</span>rr</a>
-  <ul class="nav-links">
-    <li><a href="#"        data-i18n="nav_home">Home</a></li>
-    <li><a href="#bio"     data-i18n="nav_bio">Biography</a></li>
-    <li><a href="media.html" data-i18n="nav_media">Media</a></li>
-    <li><a href="#calendar" data-i18n="nav_cal">Calendar</a></li>
-    <li><a href="#contact"  data-i18n="nav_contact">Contact</a></li>
-  </ul>
-  <button class="lang-btn" id="langBtn">DE</button>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-img" id="heroImg"></div>
-  <div class="hero-content" id="heroContent">
-    <p class="hero-label" data-i18n="hero_lbl">Cellist · Soloist · International Performer</p>
-    <h1 class="hero-title">Peter <em>Hörr</em></h1>
-    <p class="hero-sub" data-i18n="hero_sub">Renowned German cellist performing<br>across Europe and internationally.</p>
-    <div class="hero-btns">
-      <a href="#bio"      class="btn-primary"  data-i18n="hero_cta1">Discover</a>
-      <a href="#calendar" class="btn-outline"   data-i18n="hero_cta2">Upcoming concerts</a>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="unnamed%20%281%29.png" alt="Peter Hörr">
     </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-    <span data-i18n="scroll">Scroll</span>
-  </div>
-</section>
-
-<!-- TICKER -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track" id="tickerTrack"></div>
-</div>
-
-<!-- STATS -->
-<section id="stats">
-  <div class="stats-inner">
-    <div class="stat-box reveal">
-      <div class="stat-num"><span class="count" data-target="30">0</span><span class="stat-plus">+</span></div>
-      <div class="stat-lbl" data-i18n="st1">Years performing</div>
+    <div class="hero-content">
+      <span class="hero-kicker">Cellist · Soloist · International Performer</span>
+      <h1 class="hero-title">Peter<br /><em>Hörr</em></h1>
+      <p class="hero-sub">Renowned German cellist performing<br />across Europe and internationally.</p>
+      <a class="btn btn--outline" href="bio.html">Discover</a>
     </div>
-    <div class="stat-box reveal">
-      <div class="stat-num"><span class="count" data-target="4">0</span></div>
-      <div class="stat-lbl" data-i18n="st2">Continents</div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
     </div>
-    <div class="stat-box reveal">
-      <div class="stat-num"><span class="count" data-target="24">0</span><span class="stat-plus">+</span></div>
-      <div class="stat-lbl" data-i18n="st3">Years at Leipzig HMT</div>
-    </div>
-    <div class="stat-box reveal">
-      <div class="stat-num"><span class="count" data-target="200">0</span><span class="stat-plus">+</span></div>
-      <div class="stat-lbl" data-i18n="st4">Students taught</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- PRESS QUOTE -->
-<section id="press">
-  <div class="press-inner">
-    <p class="press-lbl reveal" data-i18n="press_lbl">Press</p>
-    <blockquote class="press-q reveal" data-i18n="press_q">
-      "A deeply expressive artist with remarkable tonal control and musical intelligence."
-    </blockquote>
-    <p class="press-src reveal">— <span>Berliner Zeitung</span></p>
-  </div>
-</section>
+  <!-- PRESS -->
+  <section class="section section--dark" id="press">
+    <div class="container">
+      <span class="label">Press</span>
+      <blockquote class="quote">
+        <p>"A deeply expressive artist with remarkable tonal control and musical intelligence."</p>
+        <footer>— <cite>Berliner Zeitung</cite></footer>
+      </blockquote>
+    </div>
+  </section>
 
-<!-- BIOGRAPHY -->
-<section id="bio">
-  <div class="bio-inner">
-    <div class="bio-text">
-      <div class="reveal">
-        <p class="s-lbl" data-i18n="bio_lbl">Biography</p>
-        <h2 class="s-ttl">About <em>Peter Hörr</em></h2>
-        <div class="s-div"></div>
+  <!-- BIO -->
+  <section class="section" id="bio">
+    <div class="container container--split">
+      <div class="split-label">
+        <span class="label">Biography</span>
       </div>
-      <p class="reveal" data-i18n="bio_p1">
-        Peter Hörr is one of Germany's most respected cellists, known for his refined sound, artistic depth, and an international concert career spanning <strong>three decades</strong> and <strong>four continents</strong>.
-      </p>
-      <p class="reveal" data-i18n="bio_p2">
-        Since 2000, he is <strong>Professor of Cello</strong> at the renowned Felix Mendelssohn Bartholdy University of Music and Theatre Leipzig, one of Germany's leading institutions for higher musical education.
-      </p>
-      <p class="reveal" data-i18n="bio_p3">
-        A graduate of the Berliner Philharmoniker Academy, Peter Hörr has performed across Europe, the Americas, Asia, and Australia — collaborating with leading orchestras, chamber ensembles, and festivals worldwide.
-      </p>
-      <div class="reveal" style="margin-top:2.5rem">
-        <a href="#contact" class="btn-outline" data-i18n="bio_cta">Get in touch</a>
+      <div class="split-content">
+        <h2>About<br /><em>Peter Hörr</em></h2>
+        <p>Peter Hörr is one of Germany's most respected cellists, known for his refined sound, artistic depth, and an international concert career spanning three decades and four continents.</p>
+        <p>Since 2000, he is Professor of Cello at the renowned Felix Mendelssohn Bartholdy University of Music and Theatre Leipzig, one of Germany's leading institutions for higher musical education.</p>
+        <a class="btn btn--primary" href="bio.html">Read full biography</a>
       </div>
     </div>
-    <div class="bio-img-wrap reveal" id="bioImg">
-      <img src="https://peterhoerr.martinsolerflute.workers.dev/large_peterhoerr_copyright_josepmolina_net__2.jpg"
-           alt="Peter Hörr" loading="lazy">
-      <div class="bio-img-cap">© Josep Molina</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- MEDIA -->
-<section id="media">
-  <div class="media-inner">
-    <div class="reveal">
-      <p class="s-lbl" data-i18n="med_lbl">Media</p>
-      <h2 class="s-ttl">Featured <em>Performance</em></h2>
-      <div class="s-div"></div>
-    </div>
-    <div class="video-featured reveal">
-      <iframe src="https://www.youtube.com/embed/DYi81hoUhnk?start=126"
-              title="Peter Hörr — Featured Performance"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
-    <a href="media.html" class="media-link reveal">
-      <span data-i18n="med_cta">View all media</span> →
-    </a>
-  </div>
-</section>
-
-<!-- CALENDAR -->
-<section id="calendar">
-  <div class="calendar-inner">
-    <div class="reveal">
-      <p class="s-lbl" data-i18n="cal_lbl">Concerts</p>
-      <h2 class="s-ttl">Upcoming <em>Events</em></h2>
-      <div class="s-div"></div>
-    </div>
-    <div class="concert-list">
-
-      <div class="concert-item">
-        <div class="concert-date">
-          <div class="c-day">18</div>
-          <div class="c-month" data-i18n="m_oct">Oct 2026</div>
-        </div>
-        <div class="concert-info">
-          <h3 data-i18n="c1_ttl">Bach: Suites pour Violoncelle Solo</h3>
-          <p data-i18n="c1_loc">Gewandhaus zu Leipzig · Leipzig, Germany</p>
-        </div>
-        <a href="#contact" class="concert-btn" data-i18n="c_info">Info</a>
+  <!-- MEDIA -->
+  <section class="section section--dark" id="media">
+    <div class="container">
+      <span class="label">Media</span>
+      <h2>Featured<br /><em>Performance</em></h2>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/DYi81hoUhnk?start=126"
+          title="Peter Hörr performance"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
       </div>
-
-      <div class="concert-item">
-        <div class="concert-date">
-          <div class="c-day">07</div>
-          <div class="c-month" data-i18n="m_nov">Nov 2026</div>
-        </div>
-        <div class="concert-info">
-          <h3 data-i18n="c2_ttl">Brahms: Double Concerto</h3>
-          <p data-i18n="c2_loc">Staatsoper Berlin · Berlin, Germany</p>
-        </div>
-        <a href="#contact" class="concert-btn" data-i18n="c_info">Info</a>
+      <div style="margin-top: 2rem;">
+        <a href="media.html" class="btn btn--outline">View all media</a>
       </div>
+    </div>
+  </section>
 
-      <div class="concert-item">
-        <div class="concert-date">
-          <div class="c-day">14</div>
-          <div class="c-month" data-i18n="m_dec">Dec 2026</div>
-        </div>
-        <div class="concert-info">
-          <h3 data-i18n="c3_ttl">Chamber Music Evening</h3>
-          <p data-i18n="c3_loc">Wigmore Hall · London, United Kingdom</p>
-        </div>
-        <a href="#contact" class="concert-btn" data-i18n="c_info">Info</a>
+  <!-- CALENDAR — only 2 events -->
+  <section class="section" id="calendar">
+    <div class="container">
+      <span class="label">Concerts</span>
+      <h2>Upcoming<br /><em>Events</em></h2>
+      <div class="events-list" id="events-list"></div>
+      <div style="margin-top: 2.5rem;">
+        <a href="calendar.html" class="btn btn--primary">View all concerts</a>
       </div>
+    </div>
+  </section>
 
+  <!-- CONTACT -->
+  <section class="section section--dark" id="contact">
+    <div class="container container--narrow">
+      <span class="label">Contact</span>
+      <h2>Get in<br /><em>Touch</em></h2>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" placeholder="Your name" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="your@email.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message…"></textarea>
+        </div>
+        <button class="btn btn--primary btn--full" type="submit">Send message</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+      <div class="contact-agencies">
+        <h3 class="contact-subtitle">Agencies & Contact</h3>
+        <div class="agency-list">
+          <a href="mailto:peterhoerr@me.com">Email: peterhoerr@me.com</a>
+          <a href="https://shuppartists.com/" target="_blank" rel="noopener noreferrer">Shupp Artists</a>
+          <a href="https://www.berlinklassikartistmanagement.com/" target="_blank" rel="noopener noreferrer">Berlin Klassik Artist Management</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">PETER HÖRR</div>
+      <nav class="footer-nav">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <small class="footer-copy">&copy; <span id="year"></span> Peter Hörr. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner" style="display:none;">
+    <p>We use cookies to improve your experience.</p>
+    <div class="cookie-actions">
+      <button class="btn btn--primary btn--sm" onclick="acceptCookies()">Accept</button>
+      <button class="btn btn--ghost btn--sm" onclick="rejectCookies()">Reject</button>
     </div>
   </div>
-</section>
 
-<!-- ENGAGE CTA -->
-<section id="engage">
-  <div class="engage-inner">
-    <p class="s-lbl reveal" data-i18n="eng_lbl">Book</p>
-    <h2 class="engage-ttl reveal">Engage <em>Peter Hörr</em></h2>
-    <p class="engage-p reveal" data-i18n="eng_p">For bookings, masterclasses, and collaborations, reach out directly or through his management.</p>
-    <div class="reveal">
-      <a href="#contact" class="btn-primary" data-i18n="eng_cta">Get in touch</a>
-    </div>
-  </div>
-</section>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-inner">
-    <form class="contact-form reveal" onsubmit="return false">
-      <div class="f-field"><label data-i18n="f_name">Name</label><input type="text"></div>
-      <div class="f-field"><label data-i18n="f_email">Email</label><input type="email"></div>
-      <div class="f-field"><label data-i18n="f_msg">Message</label><textarea rows="5"></textarea></div>
-      <button class="btn-submit" data-i18n="f_send">Send message</button>
-    </form>
-    <div class="contact-info-panel reveal">
-      <p class="s-lbl" data-i18n="ct_lbl">Contact</p>
-      <h2 class="s-ttl">Get in <em>Touch</em></h2>
-      <div class="s-div"></div>
-      <p class="s-lbl" style="margin-bottom:1.5rem" data-i18n="agencies_lbl">Agencies &amp; Contact</p>
-      <ul class="agency-list">
-        <li class="agency-item">
-          <span class="a-lbl">Email</span>
-          <a href="mailto:peterhoerr@me.com">peterhoerr@me.com</a>
-        </li>
-        <li class="agency-item">
-          <span class="a-lbl" data-i18n="a_int">International Management</span>
-          <a href="https://shuppartists.com/" target="_blank" rel="noopener">Shupp Artists</a>
-        </li>
-        <li class="agency-item">
-          <span class="a-lbl" data-i18n="a_de">German Management</span>
-          <a href="https://www.berlinklassikartistmanagement.com/" target="_blank" rel="noopener">Berlin Klassik Artist Management</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function() {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
 
-<!-- FOOTER -->
-<footer>
-  <div class="f-logo"><span>P</span>eter H<span>ö</span>rr</div>
-  <div class="f-links">
-    <a href="https://instagram.com"  target="_blank" rel="noopener" data-i18n="f_ig">Instagram</a>
-    <a href="https://youtube.com"    target="_blank" rel="noopener" data-i18n="f_yt">YouTube</a>
-    <a href="#contact" data-i18n="nav_contact">Contact</a>
-  </div>
-  <p>© Peter Hörr. <span data-i18n="f_copy">All rights reserved.</span></p>
-</footer>
+    const nav = document.getElementById('nav');
+    const btn = document.getElementById('menuBtn');
+    btn.addEventListener('click', function() {
+      const open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.querySelectorAll('#nav a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      }
+    });
 
-<!-- COOKIE -->
-<div id="cookie">
-  <p class="cookie-txt" data-i18n="ck_txt">We use cookies to improve your experience.</p>
-  <div class="cookie-btns">
-    <button class="c-accept" id="ckAccept" data-i18n="ck_ok">Accept</button>
-    <button class="c-reject" id="ckReject" data-i18n="ck_no">Reject</button>
-  </div>
-</div>
-
-<script>
-/* ═════════════════════════════════════════════════════════════
-   TRANSLATIONS
-   ═════════════════════════════════════════════════════════════ */
-const T = {
-  en: {
-    nav_home:'Home', nav_bio:'Biography', nav_media:'Media', nav_cal:'Calendar', nav_contact:'Contact',
-    hero_lbl:'Cellist · Soloist · International Performer',
-    hero_sub:'Renowned German cellist performing<br>across Europe and internationally.',
-    hero_cta1:'Discover', hero_cta2:'Upcoming concerts', scroll:'Scroll',
-    st1:'Years performing', st2:'Continents', st3:'Years at Leipzig HMT', st4:'Students taught',
-    press_lbl:'Press',
-    press_q:'"A deeply expressive artist with remarkable tonal control and musical intelligence."',
-    bio_lbl:'Biography',
-    bio_p1:'Peter Hörr is one of Germany\'s most respected cellists, known for his refined sound, artistic depth, and an international concert career spanning <strong>three decades</strong> and <strong>four continents</strong>.',
-    bio_p2:'Since 2000, he is <strong>Professor of Cello</strong> at the renowned Felix Mendelssohn Bartholdy University of Music and Theatre Leipzig, one of Germany\'s leading institutions for higher musical education.',
-    bio_p3:'A graduate of the Berliner Philharmoniker Academy, Peter Hörr has performed across Europe, the Americas, Asia, and Australia — collaborating with leading orchestras, chamber ensembles, and festivals worldwide.',
-    bio_cta:'Get in touch',
-    med_lbl:'Media', med_cta:'View all media',
-    cal_lbl:'Concerts',
-    m_oct:'Oct 2026', m_nov:'Nov 2026', m_dec:'Dec 2026',
-    c1_ttl:'Bach: Suites for Solo Cello', c1_loc:'Gewandhaus zu Leipzig · Leipzig, Germany',
-    c2_ttl:'Brahms: Double Concerto',    c2_loc:'Staatsoper Berlin · Berlin, Germany',
-    c3_ttl:'Chamber Music Evening',      c3_loc:'Wigmore Hall · London, United Kingdom',
-    c_info:'Info',
-    eng_lbl:'Book', eng_p:'For bookings, masterclasses, and collaborations, reach out directly or through his management.', eng_cta:'Get in touch',
-    f_name:'Name', f_email:'Email', f_msg:'Message', f_send:'Send message',
-    ct_lbl:'Contact', agencies_lbl:'Agencies &amp; Contact',
-    a_int:'International Management', a_de:'German Management',
-    f_ig:'Instagram', f_yt:'YouTube', f_copy:'All rights reserved.',
-    ck_txt:'We use cookies to improve your experience.', ck_ok:'Accept', ck_no:'Reject',
-    ticker: [
-      'Professor of the Felix Mendelssohn Bartholdy University',
-      'Leipzig',
-      '30 Years of International Concerts',
-      'Europe · Americas · Asia · Australia',
-      'Chamber Music · Recitals · Orchestral',
-      'Professor of Cello since 2000',
-      'Berliner Philharmoniker Academy'
-    ]
-  },
-  de: {
-    nav_home:'Startseite', nav_bio:'Biografie', nav_media:'Medien', nav_cal:'Kalender', nav_contact:'Kontakt',
-    hero_lbl:'Cellist · Solist · Internationaler Performer',
-    hero_sub:'Renommierter deutscher Cellist mit Konzerten<br>in Europa und weltweit.',
-    hero_cta1:'Entdecken', hero_cta2:'Kommende Konzerte', scroll:'Scrollen',
-    st1:'Jahre auf der Bühne', st2:'Kontinente', st3:'Jahre an der HMT Leipzig', st4:'Studierende unterrichtet',
-    press_lbl:'Presse',
-    press_q:'„Ein zutiefst ausdrucksstarker Künstler mit bemerkenswerter Klangkontrolle und musikalischer Intelligenz."',
-    bio_lbl:'Biografie',
-    bio_p1:'Peter Hörr ist einer der angesehensten Cellisten Deutschlands, bekannt für seinen verfeinerten Klang, seine künstlerische Tiefe und eine internationale Konzertkarriere, die sich über <strong>drei Jahrzehnte</strong> und <strong>vier Kontinente</strong> erstreckt.',
-    bio_p2:'Seit dem Jahr 2000 ist er <strong>Professor für Violoncello</strong> an der renommierten Hochschule für Musik und Theater Felix Mendelssohn Bartholdy Leipzig, einer der führenden Institutionen für höhere Musikausbildung in Deutschland.',
-    bio_p3:'Als Absolvent der Akademie der Berliner Philharmoniker ist Peter Hörr in Europa, Amerika, Asien und Australien aufgetreten und hat mit führenden Orchestern, Kammermusikensembles und Festivals weltweit zusammengearbeitet.',
-    bio_cta:'Kontakt aufnehmen',
-    med_lbl:'Medien', med_cta:'Alle Medien ansehen',
-    cal_lbl:'Konzerte',
-    m_oct:'Okt 2026', m_nov:'Nov 2026', m_dec:'Dez 2026',
-    c1_ttl:'Bach: Suiten für Violoncello solo', c1_loc:'Gewandhaus zu Leipzig · Leipzig, Deutschland',
-    c2_ttl:'Brahms: Doppelkonzert',             c2_loc:'Staatsoper Berlin · Berlin, Deutschland',
-    c3_ttl:'Kammermusik-Abend',                 c3_loc:'Wigmore Hall · London, Vereinigtes Königreich',
-    c_info:'Info',
-    eng_lbl:'Buchung', eng_p:'Für Buchungen, Meisterkurse und Kooperationen wenden Sie sich direkt oder über sein Management an uns.', eng_cta:'Kontakt aufnehmen',
-    f_name:'Name', f_email:'E-Mail', f_msg:'Nachricht', f_send:'Nachricht senden',
-    ct_lbl:'Kontakt', agencies_lbl:'Agenturen &amp; Kontakt',
-    a_int:'Internationales Management', a_de:'Deutsches Management',
-    f_ig:'Instagram', f_yt:'YouTube', f_copy:'Alle Rechte vorbehalten.',
-    ck_txt:'Wir verwenden Cookies, um Ihre Erfahrung zu verbessern.', ck_ok:'Akzeptieren', ck_no:'Ablehnen',
-    ticker: [
-      'Professor der Felix Mendelssohn Bartholdy Hochschule',
-      'Leipzig',
-      '30 Jahre internationale Konzerte',
-      'Europa · Amerika · Asien · Australien',
-      'Kammermusik · Recitals · Orchester',
-      'Professor für Violoncello seit 2000',
-      'Akademie der Berliner Philharmoniker'
-    ]
-  }
-};
-
-/* ─── LANGUAGE ──────────────────────────────────────────────── */
-let lang = 'en';
-function applyLang() {
-  const t = T[lang];
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const k = el.getAttribute('data-i18n');
-    if (t[k] !== undefined) el.innerHTML = t[k];
-  });
-  document.getElementById('langBtn').textContent = lang === 'en' ? 'DE' : 'EN';
-  document.documentElement.lang = lang;
-  buildTicker();
-}
-document.getElementById('langBtn').addEventListener('click', () => {
-  lang = lang === 'en' ? 'de' : 'en';
-  applyLang();
-});
-
-/* ─── TICKER ────────────────────────────────────────────────── */
-function buildTicker() {
-  const track = document.getElementById('tickerTrack');
-  const items = T[lang].ticker;
-  const seg = segs => segs.map(s => `<span class="ticker-seg">${s}<em>·</em></span>`).join('');
-  track.innerHTML = seg(items) + seg(items); // duplicate for seamless loop
-}
-buildTicker();
-
-/* ─── CURSOR ────────────────────────────────────────────────── */
-const ring = document.getElementById('curRing');
-const dot  = document.getElementById('curDot');
-let mx = window.innerWidth/2, my = window.innerHeight/2, rx = mx, ry = my;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-(function loop() {
-  rx += (mx - rx) * .1; ry += (my - ry) * .1;
-  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-  dot.style.left  = mx + 'px'; dot.style.top  = my + 'px';
-  requestAnimationFrame(loop);
-})();
-document.querySelectorAll('a, button, .stat-box, .concert-item, .bio-img-wrap').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-});
-
-/* ─── PARALLAX HERO ─────────────────────────────────────────── */
-const heroContent = document.getElementById('heroContent');
-const heroImg     = document.getElementById('heroImg');
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  if (y < window.innerHeight) {
-    heroImg.style.transform     = `translateY(${y * .3}px)`;
-    heroContent.style.transform = `translateY(${y * .15}px)`;
-    heroContent.style.opacity   = Math.max(0, 1 - y / (window.innerHeight * .65));
-  }
-}, { passive: true });
-
-/* ─── 3D TILT on bio image ──────────────────────────────────── */
-const bioImg = document.getElementById('bioImg');
-if (bioImg) {
-  bioImg.addEventListener('mousemove', e => {
-    const r = bioImg.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width  - .5;
-    const y = (e.clientY - r.top)  / r.height - .5;
-    bioImg.style.transition = 'none';
-    bioImg.style.transform  = `perspective(900px) rotateY(${x*12}deg) rotateX(${-y*8}deg)`;
-  });
-  bioImg.addEventListener('mouseleave', () => {
-    bioImg.style.transition = 'transform .65s ease, border-color .4s';
-    bioImg.style.transform  = 'perspective(900px) rotateY(0) rotateX(0)';
-  });
-}
-
-/* ─── 3D TILT on concert items ──────────────────────────────── */
-document.querySelectorAll('.concert-item').forEach(item => {
-  item.addEventListener('mousemove', e => {
-    const r = item.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - .5;
-    item.style.transition = 'none';
-    item.style.transform  = `perspective(700px) rotateY(${x*5}deg)`;
-  });
-  item.addEventListener('mouseleave', () => {
-    item.style.transition = 'transform .5s ease, opacity .6s, border-color .35s';
-    item.style.transform  = 'perspective(700px) rotateY(0)';
-  });
-});
-
-/* ─── SCROLL REVEAL + COUNTER ───────────────────────────────── */
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    e.target.classList.add('vis');
-    // counter animation
-    const counter = e.target.querySelector('.count');
-    if (counter && !counter.dataset.done) {
-      counter.dataset.done = '1';
-      const target = +counter.dataset.target;
-      const dur    = 1600;
-      const step   = 16;
-      const inc    = target / (dur / step);
-      let cur      = 0;
-      const t = setInterval(() => {
-        cur = Math.min(cur + inc, target);
-        counter.textContent = Math.floor(cur);
-        if (cur >= target) clearInterval(t);
-      }, step);
+    function acceptCookies() {
+      localStorage.setItem('cookies', 'accepted');
+      document.getElementById('cookieBanner').style.display = 'none';
     }
-    obs.unobserve(e.target);
-  });
-}, { threshold: .15 });
+    function rejectCookies() {
+      localStorage.setItem('cookies', 'rejected');
+      document.getElementById('cookieBanner').style.display = 'none';
+    }
+    if (!localStorage.getItem('cookies')) {
+      document.getElementById('cookieBanner').style.display = 'flex';
+    }
 
-document.querySelectorAll('.reveal, .concert-item, .stat-box').forEach(el => obs.observe(el));
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formStatus').textContent = 'Thank you — your message has been sent.';
+      this.reset();
+    });
 
-/* ─── CONCERT ITEM stagger ──────────────────────────────────── */
-const cObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    const items = document.querySelectorAll('.concert-item');
-    items.forEach((item, i) => setTimeout(() => item.classList.add('vis'), i * 120));
-    cObs.disconnect();
-  });
-}, { threshold: .1 });
-const cl = document.querySelector('.concert-list');
-if (cl) cObs.observe(cl);
+    var revealEls = document.querySelectorAll('.section, .event-card, .quote');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(function(el) { io.observe(el); });
+  </script>
 
-/* ─── COOKIE ────────────────────────────────────────────────── */
-const ck = document.getElementById('cookie');
-const closeCk = () => { ck.classList.add('hidden'); localStorage.setItem('ck','1'); };
-if (localStorage.getItem('ck')) ck.classList.add('hidden');
-document.getElementById('ckAccept').addEventListener('click', closeCk);
-document.getElementById('ckReject').addEventListener('click', closeCk);
-</script>
+  <script>
+    const URL_SHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTn1g8XWcBeNSZLfI80KQ2yX8OuSGgW3uhx0LGDekNlIQUe03zSUZdrQo4fV4eZUTAp_5PWyHA5EZmh/pub?gid=0&single=true&output=csv';
+
+    function formatearFecha(fechaStr) {
+      const fecha = new Date(fechaStr + 'T00:00:00');
+      return fecha.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    function parsearCSV(texto) {
+      const filas = [];
+      const lineas = texto.trim().split('\n');
+      const parsearLinea = linea => {
+        const cols = [];
+        let actual = '', dentroComillas = false;
+        for (let i = 0; i < linea.length; i++) {
+          const c = linea[i];
+          if (c === '"') { dentroComillas = !dentroComillas; }
+          else if (c === ',' && !dentroComillas) { cols.push(actual.trim()); actual = ''; }
+          else { actual += c; }
+        }
+        cols.push(actual.trim());
+        return cols;
+      };
+      const cabeceras = parsearLinea(lineas[0]);
+      for (let i = 1; i < lineas.length; i++) {
+        if (!lineas[i].trim()) continue;
+        const valores = parsearLinea(lineas[i]);
+        const obj = {};
+        cabeceras.forEach((cab, j) => { obj[cab] = valores[j] || ''; });
+        filas.push(obj);
+      }
+      return filas;
+    }
+
+    function eventoHTML(e) {
+      return `
+        <article class="event-card is-visible">
+          <div class="event-meta">
+            <time class="event-date" datetime="${e.Date}">${formatearFecha(e.Date)}</time>
+            <span class="event-city">${e.City}</span>
+          </div>
+          <div class="event-body">
+            <h3 class="event-venue">${e.Venue}</h3>
+            <p class="event-program">${e.Program}</p>
+          </div>
+          <a class="event-link" href="${e.Link || '#'}">
+            <span>Details</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </article>`;
+    }
+
+    fetch(URL_SHEET)
+      .then(r => r.text())
+      .then(csv => {
+        const eventos = parsearCSV(csv);
+        const lista = document.getElementById('events-list');
+        if (!eventos.length) { lista.innerHTML = '<p>No upcoming events.</p>'; return; }
+        /* Show only first 2 events on homepage */
+        lista.innerHTML = eventos.slice(0, 2).map(eventoHTML).join('');
+      })
+      .catch(() => {
+        document.getElementById('events-list').innerHTML = '<p>Could not load events.</p>';
+      });
+  </script>
+
 </body>
 </html>
