@@ -972,6 +972,45 @@ body { counter-reset: section-counter; }
 /* ============================================================
    MEDIA PAGE
    ============================================================ */
+
+/* Hero corto para páginas internas */
+.hero--short            { min-height: 55vh; }
+.hero--short .hero-content { padding-bottom: 4rem; }
+.hero--short .hero-scroll  { display: none; }
+.hero--short::before       { display: none; }
+
+/* Audio */
+.audio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.audio-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.audio-block iframe {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  transition: border-color 0.3s;
+}
+
+.audio-block iframe:hover { border-color: var(--gold); }
+
+.audio-caption {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+
+/* Video grid */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
