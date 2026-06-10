@@ -1136,3 +1136,9 @@ body { counter-reset: section-counter; }
   .event-card  { opacity: 1; transform: none; }
   .quote       { opacity: 1; transform: none; }
 }
+@media (max-width: 768px) {
+  body.menu-open .header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
